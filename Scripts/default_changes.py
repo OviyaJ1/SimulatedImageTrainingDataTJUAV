@@ -206,8 +206,6 @@ def call():
     node_tex = mat.node_tree.nodes.new("ShaderNodeTexImage")
     node_tex.image = new_image
     principled = mat.node_tree.nodes["Principled BSDF"]
-    #link = principled.inputs["Base Color"].links[0]
-    #mat.node_tree.links.remove(link)
     mat.node_tree.links.new(principled.inputs["Base Color"], node_tex.outputs["Color"])
     
     imgdir = "C:/Users/Oviya/Documents/Blender/Fields/"
@@ -217,31 +215,21 @@ def call():
     
     mat_extra = bpy.data.materials["Field_Extra"]
     mat_extra.use_nodes = True
-    #mat_extra.node_tree.nodes.remove(mat_extra.node_tree.nodes["BSDF_PRINCIPLED"].inputs["Base Color"].links[0].from_node)
-    
+   
     node_tex_extra = mat_extra.node_tree.nodes.new("ShaderNodeTexImage")
     node_tex_extra.image = new_image_extra
     principled_extra = mat_extra.node_tree.nodes["Principled BSDF"]
-    #bpy.data.materials["Field_Extra"].node_tree.nodes["Principled BSDF"].inputs[0].show_expanded = True
-    #link_extra = principled_extra.inputs["Base Color"].links[0]
-    #mat_extra.node_tree.links.remove(link_extra)
     mat_extra.node_tree.links.new(principled_extra.inputs["Base Color"], node_tex_extra.outputs["Color"])
     
     field_pos = bpy.data.objects["Field"]
     field_extra_pos = bpy.data.objects["Field_Extra"]
     
-    #field_pos.rotation_euler[2] = camera_rotation_random + math.radians(90)
-    #field_extra_pos.rotation_euler[2] = camera_rotation_random + math.radians(90)
     field_pos.location[0] = 0
     field_extra_pos.location[0] = 0
     field_pos.location[1] = 0
     field_extra_pos.location[1] = 0
     
-    #mat = bpy.data.materials["Field"]
-    #principled = mat.node_tree.nodes["Principled BSDF"]
-    #principled.inputs["Base Color"] = bpy.data.images[os.path.join(imgdir, imgfile)].name #new_image
-    
-    print(result_return)
+    #print(result_return)
     return result_return
     
 call()
