@@ -3,6 +3,9 @@ Oviya Jeyaprakash <br />
 May 23, 2022 <br />
 Yilmaz - Period 6 <br />
 
+## Context
+<p> My goal was to create a simple Blender file and a couple scripts that allowed for any TJ UAV member to generate as many field images as needed within Blender, while allowing the user to change a few significant variables if wanted. An initial 1000 training images were generated in the span of 2 days, along with a CSV file that recorded all the data needed per target. In addition, an OpenCV localizer script was made to easily crop and make local images of each target. <p />
+
 ## Blender File Setup
 <p> If you don't already have Blender installed on your desktop, make sure to do so (https://www.blender.org/download/). <br/>
   
